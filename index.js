@@ -23,7 +23,7 @@ module.exports = (img, opts) => {
 	}
 
 	return iterm2Version().then(version => {
-		if (version[0] < 2 && version[1] < 9) {
+		if (Number(version[0]) < 2 && Number(version[2]) < 9) {
 			return Promise.reject(new TermImgNotSupported());
 		}
 

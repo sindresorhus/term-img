@@ -1,0 +1,7 @@
+language: objective-c
+install:
+  - brew install n
+  - n latest
+script:
+  - npm install
+  - npm test

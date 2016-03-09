@@ -1,0 +1,43 @@
+{
+  "name": "term-img",
+  "version": "0.0.0",
+  "description": "Display images in your terminal",
+  "license": "MIT",
+  "repository": "sindresorhus/term-img",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "term",
+    "image",
+    "iterm",
+    "iterm2",
+    "terminal",
+    "img",
+    "app",
+    "version",
+    "ansi",
+    "escape",
+    "gif",
+    "gifs"
+  ],
+  "dependencies": {
+    "ansi-escapes": "^1.3.0",
+    "iterm2-version": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  }
+}

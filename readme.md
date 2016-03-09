@@ -65,6 +65,11 @@ Type: `boolean`<br>
 Default: `true`
 
 
+## Related
+
+- [term-img-cli](https://github.com/sindresorhus/term-img-cli) - CLI for this module
+
+
 ## License
 
 MIT © [Sindre Sorhus](https://sindresorhus.com)

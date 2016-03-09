@@ -14,7 +14,7 @@ class TermImgNotSupported extends Error {
 module.exports = (img, opts) => {
 	opts = opts || {};
 
-	if (!img) {
+	if (!(img && img.length > 0)) {
 		return Promise.reject(new TypeError('Image required'));
 	}
 

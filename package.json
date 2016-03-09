@@ -1,6 +1,6 @@
 {
   "name": "term-img",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Display images in your terminal",
   "license": "MIT",
   "repository": "sindresorhus/term-img",

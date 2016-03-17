@@ -3,7 +3,7 @@ const fs = require('fs');
 const iterm2Version = require('iterm2-version');
 const ansiEscapes = require('ansi-escapes');
 
-class TermImgNotSupported extends Error {
+class UnsupportedTerminal extends Error {
 	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
@@ -11,26 +11,34 @@ class TermImgNotSupported extends Error {
 	}
 }
 
+function unsupported() {
+	throw new UnsupportedTerminal();
+}
+
 module.exports = (img, opts) => {
 	opts = opts || {};
 
+	const fallback = typeof opts.fallback === 'function' ? opts.fallback : unsupported;
+
 	if (!(img && img.length > 0)) {
-		return Promise.reject(new TypeError('Image required'));
+		throw new TypeError('Image required');
 	}
 
 	if (process.env.TERM_PROGRAM !== 'iTerm.app') {
-		return Promise.reject(new TermImgNotSupported());
+		fallback();
+		return;
 	}
 
-	return iterm2Version().then(version => {
-		if (Number(version[0]) < 2 && Number(version[2]) < 9) {
-			return Promise.reject(new TermImgNotSupported());
-		}
+	const version = iterm2Version();
 
-		if (typeof img === 'string') {
-			img = fs.readFileSync(img);
-		}
+	if (Number(version[0]) < 2 && Number(version[2]) < 9) {
+		fallback();
+		return;
+	}
 
-		console.log(ansiEscapes.image(img, opts));
-	});
+	if (typeof img === 'string') {
+		img = fs.readFileSync(img);
+	}
+
+	console.log(ansiEscapes.image(img, opts));
 };

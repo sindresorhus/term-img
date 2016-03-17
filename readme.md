@@ -21,23 +21,17 @@ $ npm install --save term-img
 ```js
 const termImg = require('term-img');
 
-termImg('unicorn.jpg').catch(err => {
-	if (err.name === 'TermImgNotSupported') {
-		// implement fallback for terminals not supporting the image escape
-		fallback();
-		return;
-	}
+function fallback() {
+	// do something else when not supported
+}
 
-	throw err;
-});
+termImg('unicorn.jpg', {fallback});
 ```
 
 
 ## API
 
 ### termImg(input, [options])
-
-Returns a promise.
 
 #### input
 
@@ -63,6 +57,13 @@ The width and height are given as a number followed by a unit, or the word "auto
 
 Type: `boolean`<br>
 Default: `true`
+
+##### fallback
+
+Type: `function`<br>
+Default: `() => throw new UnsupportedTerminal()`
+
+Enables you to do something else when the terminal doesn't support images.
 
 
 ## Related

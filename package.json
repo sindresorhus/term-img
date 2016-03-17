@@ -24,17 +24,25 @@
     "iterm",
     "iterm2",
     "terminal",
+    "shell",
+    "console",
+    "command-line",
     "img",
+    "pic",
+    "picture",
+    "photo",
     "app",
     "version",
     "ansi",
     "escape",
     "gif",
-    "gifs"
+    "gifs",
+    "jpg",
+    "jpeg"
   ],
   "dependencies": {
     "ansi-escapes": "^1.3.0",
-    "iterm2-version": "^1.0.0"
+    "iterm2-version": "^2.1.0"
   },
   "devDependencies": {
     "ava": "*",

@@ -6,7 +6,7 @@
 
 Even [animated gifs](https://github.com/vdemedes/gifi)!
 
-*Currently only supported on iTerm >=2.9.*
+*Currently only supported on [iTerm >=2.9](https://www.iterm2.com/downloads.html).*
 
 
 ## Install

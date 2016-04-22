@@ -1,7 +1,5 @@
-language: objective-c
-install:
-  - brew install n
-  - n latest
-script:
-  - npm install
-  - npm test
+os: osx
+language: node_js
+node_js:
+  - '5'
+  - '4'

@@ -4,10 +4,9 @@ const iterm2Version = require('iterm2-version');
 const ansiEscapes = require('ansi-escapes');
 
 class UnsupportedTerminal extends Error {
-	constructor(message) {
-		super(message);
+	constructor() {
+		super('iTerm >=2.9 required');
 		this.name = this.constructor.name;
-		this.message = 'iTerm >=2.9 required';
 	}
 }
 

@@ -6,7 +6,7 @@ const ansiEscapes = require('ansi-escapes');
 class UnsupportedTerminal extends Error {
 	constructor() {
 		super('iTerm >=2.9 required');
-		this.name = this.constructor.name;
+		this.name = 'UnsupportedTerminal';
 	}
 }
 

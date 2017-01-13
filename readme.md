@@ -22,7 +22,7 @@ $ npm install --save term-img
 const termImg = require('term-img');
 
 function fallback() {
-	// do something else when not supported
+	// Do something else when not supported
 }
 
 termImg('unicorn.jpg', {fallback});
@@ -35,7 +35,7 @@ termImg('unicorn.jpg', {fallback});
 
 #### input
 
-Type: `string` `buffer`
+Type: `string` `Buffer`
 
 Filepath to an image or an image as a buffer.
 
@@ -46,7 +46,7 @@ Filepath to an image or an image as a buffer.
 
 Type: `string` `number`
 
-The width and height are given as a number followed by a unit, or the word "auto".
+The width and height are given as a number followed by a unit, or the word `'auto'`.
 
 - `N`: N character cells.
 - `Npx`: N pixels.
@@ -60,7 +60,7 @@ Default: `true`
 
 ##### fallback
 
-Type: `function`<br>
+Type: `Function`<br>
 Default: `() => throw new UnsupportedTerminal()`
 
 Enables you to do something else when the terminal doesn't support images.

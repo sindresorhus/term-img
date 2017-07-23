@@ -3,15 +3,15 @@ const fs = require('fs');
 const iterm2Version = require('iterm2-version');
 const ansiEscapes = require('ansi-escapes');
 
-class UnsupportedTerminal extends Error { // eslint-disable-line unicorn/custom-error-definition
+class UnsupportedTerminalError extends Error {
 	constructor() {
-		super('iTerm >=2.9 required');
-		this.name = 'UnsupportedTerminal';
+		super('iTerm >=3 required');
+		this.name = 'UnsupportedTerminalError';
 	}
 }
 
 function unsupported() {
-	throw new UnsupportedTerminal();
+	throw new UnsupportedTerminalError();
 }
 
 function main(img, opts) {
@@ -30,7 +30,7 @@ function main(img, opts) {
 
 	const version = iterm2Version();
 
-	if (Number(version[0]) < 2 && Number(version[2]) < 9) {
+	if (Number(version[0]) < 3) {
 		fallback();
 		return;
 	}
@@ -46,6 +46,4 @@ module.exports = (img, opts) => {
 	console.log(main(img, opts));
 };
 
-module.exports.string = (img, opts) => {
-	return main(img, opts);
-};
+module.exports.string = main;

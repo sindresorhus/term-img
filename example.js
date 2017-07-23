@@ -1,5 +1,5 @@
 'use strict';
-const termImg = require('./');
+const termImg = require('.');
 
 termImg('fixture.jpg', {
 	width: 50,

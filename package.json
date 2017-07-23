@@ -41,7 +41,7 @@
     "jpeg"
   ],
   "dependencies": {
-    "ansi-escapes": "^1.3.0",
+    "ansi-escapes": "^2.0.0",
     "iterm2-version": "^2.1.0"
   },
   "devDependencies": {

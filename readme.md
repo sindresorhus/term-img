@@ -12,7 +12,7 @@ Even [animated gifs](https://github.com/vdemedes/gifi)!
 ## Install
 
 ```
-$ npm install --save term-img
+$ npm install term-img
 ```
 
 
@@ -67,7 +67,7 @@ Default: `true`
 ##### fallback
 
 Type: `Function`<br>
-Default: `() => throw new UnsupportedTerminal()`
+Default: `() => throw new UnsupportedTerminalError()`
 
 Enables you to do something else when the terminal doesn't support images.
 

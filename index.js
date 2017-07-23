@@ -24,15 +24,13 @@ function main(img, opts) {
 	}
 
 	if (process.env.TERM_PROGRAM !== 'iTerm.app') {
-		fallback();
-		return;
+		return fallback;
 	}
 
 	const version = iterm2Version();
 
 	if (Number(version[0]) < 3) {
-		fallback();
-		return;
+		return fallback;
 	}
 
 	if (typeof img === 'string') {
@@ -43,7 +41,22 @@ function main(img, opts) {
 }
 
 module.exports = (img, opts) => {
-	console.log(main(img, opts));
+	const ret = main(img, opts);
+
+	if (typeof ret === 'function') {
+		ret();
+		return;
+	}
+
+	console.log(ret);
 };
 
-module.exports.string = main;
+module.exports.string = (img, opts) => {
+	const ret = main(img, opts);
+
+	if (typeof ret === 'function') {
+		return ret();
+	}
+
+	return ret;
+};

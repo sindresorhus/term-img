@@ -33,6 +33,12 @@ termImg('unicorn.jpg', {fallback});
 
 ### termImg(input, [options])
 
+Log the image to the terminal directly.
+
+### termImg.string(input, [options])
+
+Get the image as a `string` that you can log manually.
+
 #### input
 
 Type: `string` `Buffer`

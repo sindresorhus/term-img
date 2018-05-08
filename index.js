@@ -14,12 +14,10 @@ function unsupported() {
 	throw new UnsupportedTerminalError();
 }
 
-function main(img, opts) {
-	opts = opts || {};
+function main(image, options = {}) {
+	const fallback = typeof options.fallback === 'function' ? options.fallback : unsupported;
 
-	const fallback = typeof opts.fallback === 'function' ? opts.fallback : unsupported;
-
-	if (!(img && img.length > 0)) {
+	if (!(image && image.length > 0)) {
 		throw new TypeError('Image required');
 	}
 
@@ -33,15 +31,15 @@ function main(img, opts) {
 		return fallback;
 	}
 
-	if (typeof img === 'string') {
-		img = fs.readFileSync(img);
+	if (typeof image === 'string') {
+		image = fs.readFileSync(image);
 	}
 
-	return ansiEscapes.image(img, opts);
+	return ansiEscapes.image(image, options);
 }
 
-module.exports = (img, opts) => {
-	const ret = main(img, opts);
+module.exports = (image, options) => {
+	const ret = main(image, options);
 
 	if (typeof ret === 'function') {
 		ret();
@@ -51,8 +49,8 @@ module.exports = (img, opts) => {
 	console.log(ret);
 };
 
-module.exports.string = (img, opts) => {
-	const ret = main(img, opts);
+module.exports.string = (image, options) => {
+	const ret = main(image, options);
 
 	if (typeof ret === 'function') {
 		return ret();

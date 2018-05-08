@@ -1,6 +1,6 @@
 # term-img [![Build Status](https://travis-ci.org/sindresorhus/term-img.svg?branch=master)](https://travis-ci.org/sindresorhus/term-img)
 
-> Display images in your terminal
+> Display images in iTerm
 
 ![](screenshot.jpg)
 

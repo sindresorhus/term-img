@@ -1,51 +1,51 @@
 {
-  "name": "term-img",
-  "version": "2.1.0",
-  "description": "Display images in your terminal",
-  "license": "MIT",
-  "repository": "sindresorhus/term-img",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "term",
-    "image",
-    "iterm",
-    "iterm2",
-    "terminal",
-    "shell",
-    "console",
-    "command-line",
-    "img",
-    "pic",
-    "picture",
-    "photo",
-    "app",
-    "version",
-    "ansi",
-    "escape",
-    "gif",
-    "gifs",
-    "jpg",
-    "jpeg"
-  ],
-  "dependencies": {
-    "ansi-escapes": "^2.0.0",
-    "iterm2-version": "^2.1.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  }
+	"name": "term-img",
+	"version": "2.1.0",
+	"description": "Display images in iTerm",
+	"license": "MIT",
+	"repository": "sindresorhus/term-img",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"term",
+		"image",
+		"iterm",
+		"iterm2",
+		"terminal",
+		"shell",
+		"console",
+		"command-line",
+		"img",
+		"pic",
+		"picture",
+		"photo",
+		"app",
+		"version",
+		"ansi",
+		"escape",
+		"gif",
+		"gifs",
+		"jpg",
+		"jpeg"
+	],
+	"dependencies": {
+		"ansi-escapes": "^3.1.0",
+		"iterm2-version": "^2.1.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }

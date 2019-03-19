@@ -31,17 +31,17 @@ termImg('unicorn.jpg', {fallback});
 
 ## API
 
-### termImg(input, [options])
+### termImg(image, [options])
 
 Log the image to the terminal directly.
 
-### termImg.string(input, [options])
+### termImg.string(image, [options])
 
 Get the image as a `string` that you can log manually.
 
-#### input
+#### image
 
-Type: `string` `Buffer`
+Type: `string | Buffer`
 
 Filepath to an image or an image as a buffer.
 
@@ -50,7 +50,7 @@ Filepath to an image or an image as a buffer.
 ##### width
 ##### height
 
-Type: `string` `number`
+Type: `'auto' | string | number`
 
 The width and height are given as a number followed by a unit, or the word `'auto'`.
 

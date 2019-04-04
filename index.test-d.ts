@@ -1,5 +1,6 @@
-import {expectType} from 'tsd-check';
-import termImg, {UnsupportedTerminalError} from '.';
+import {expectType} from 'tsd';
+import termImg = require('.');
+import {UnsupportedTerminalError} from '.';
 
 expectType<void>(termImg('/foo/bar.jpg'));
 expectType<void>(termImg(new Buffer(1)));
@@ -13,4 +14,5 @@ expectType<string | boolean>(
 	termImg.string('/foo/bar.jpg', {fallback: () => false})
 );
 
-expectType<typeof UnsupportedTerminalError>(UnsupportedTerminalError);
+const unsupportedTerminalError = new UnsupportedTerminalError();
+expectType<UnsupportedTerminalError>(unsupportedTerminalError);

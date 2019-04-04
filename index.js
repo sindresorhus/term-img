@@ -50,7 +50,6 @@ const termImg = (image, options) => {
 };
 
 module.exports = termImg;
-module.exports.default = termImg;
 
 module.exports.string = (image, options) => {
 	const ret = main(image, options);

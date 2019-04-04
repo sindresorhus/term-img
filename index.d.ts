@@ -1,13 +1,23 @@
 /// <reference types="node"/>
 import {ImageOptions} from 'ansi-escapes';
 
-export interface Options<FallbackType = unknown> extends ImageOptions {
-	/**
-	Enables you to do something else when the terminal doesn't support images.
+declare class UnsupportedTerminalErrorClass extends Error {
+	readonly name: 'UnsupportedTerminalError';
 
-	@default () => throw new UnsupportedTerminalError()
-	*/
-	fallback?: () => FallbackType;
+	constructor();
+}
+
+declare namespace termImg {
+	interface Options<FallbackType = unknown> extends ImageOptions {
+		/**
+		Enables you to do something else when the terminal doesn't support images.
+
+		@default () => throw new UnsupportedTerminalError()
+		*/
+		readonly fallback?: () => FallbackType;
+	}
+
+	type UnsupportedTerminalError = UnsupportedTerminalErrorClass;
 }
 
 declare const termImg: {
@@ -18,7 +28,7 @@ declare const termImg: {
 
 	@example
 	```
-	import termImg from 'term-img';
+	import termImg = require('term-img');
 
 	function fallback() {
 		// Do something else when not supported
@@ -27,7 +37,7 @@ declare const termImg: {
 	termImg('unicorn.jpg', {fallback});
 	```
 	*/
-	(image: string | Buffer, options?: Options): void;
+	(image: string | Buffer, options?: termImg.Options): void;
 
 	/**
 	Get the image as a `string` that you can log manually.
@@ -36,14 +46,10 @@ declare const termImg: {
 	*/
 	string<FallbackType = unknown>(
 		image: string | Buffer,
-		options?: Options<FallbackType>
+		options?: termImg.Options<FallbackType>
 	): string | FallbackType;
+
+	UnsupportedTerminalError: typeof UnsupportedTerminalErrorClass;
 };
 
-export default termImg;
-
-export class UnsupportedTerminalError extends Error {
-	readonly name: 'UnsupportedTerminalError';
-
-	constructor();
-}
+export = termImg;

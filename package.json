@@ -13,10 +13,11 @@
 		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "xo && ava && tsd"
 	},
 	"files": [
-		"index.js"
+		"index.js",
+		"index.d.ts"
 	],
 	"keywords": [
 		"term",
@@ -41,11 +42,13 @@
 		"jpeg"
 	],
 	"dependencies": {
-		"ansi-escapes": "^3.1.0",
-		"iterm2-version": "^4.0.0"
+		"ansi-escapes": "^4.1.0",
+		"iterm2-version": "^4.1.0"
 	},
 	"devDependencies": {
-		"ava": "^0.25.0",
-		"xo": "^0.23.0"
+		"@types/node": "^11.13.0",
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
 	}
 }

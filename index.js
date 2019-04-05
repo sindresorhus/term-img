@@ -38,7 +38,7 @@ function main(image, options = {}) {
 	return ansiEscapes.image(image, options);
 }
 
-module.exports = (image, options) => {
+const termImg = (image, options) => {
 	const ret = main(image, options);
 
 	if (typeof ret === 'function') {
@@ -49,6 +49,8 @@ module.exports = (image, options) => {
 	console.log(ret);
 };
 
+module.exports = termImg;
+
 module.exports.string = (image, options) => {
 	const ret = main(image, options);
 
@@ -58,3 +60,5 @@ module.exports.string = (image, options) => {
 
 	return ret;
 };
+
+module.exports.UnsupportedTerminalError = UnsupportedTerminalError;

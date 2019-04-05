@@ -1,7 +1,7 @@
 import test from 'ava';
-import m from '.';
+import termImg from '.';
 
 test('main', t => {
 	// TODO: Write some real tests
-	t.is(typeof m, 'function');
+	t.is(typeof termImg, 'function');
 });

@@ -44,7 +44,7 @@ declare const termImg: {
 
 	@param image - Filepath to an image or an image as a buffer.
 	*/
-	string<FallbackType = unknown>(
+	string<FallbackType>(
 		image: string | Buffer,
 		options?: termImg.Options<FallbackType>
 	): string | FallbackType;

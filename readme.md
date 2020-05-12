@@ -2,6 +2,8 @@
 
 > Display images in iTerm
 
+You probably want the higher-level [terminal-image](https://github.com/sindresorhus/terminal-image) module for displaying your images.
+
 ![](screenshot.jpg)
 
 Even [animated gifs](https://github.com/vdemedes/gifi)!
@@ -22,20 +24,16 @@ $ npm install term-img
 const termImg = require('term-img');
 
 function fallback() {
-	// Do something else when not supported
+	// Return something else when not supported
 }
 
-termImg('unicorn.jpg', {fallback});
+console.log(termImg('unicorn.jpg', {fallback}));
 ```
 
 
 ## API
 
 ### termImg(image, [options])
-
-Log the image to the terminal directly.
-
-### termImg.string(image, [options])
 
 Get the image as a `string` that you can log manually.
 

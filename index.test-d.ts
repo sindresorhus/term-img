@@ -1,6 +1,6 @@
-import { expectType } from 'tsd';
+import {expectType} from 'tsd';
 import termImg = require('.');
-import { UnsupportedTerminalError } from '.';
+import {UnsupportedTerminalError} from '.';
 
 expectType<string>(termImg('/foo/bar.jpg'));
 expectType<string>(termImg(Buffer.from(1)));

@@ -1,5 +1,5 @@
 /// <reference types="node"/>
-import { ImageOptions } from 'ansi-escapes';
+import {ImageOptions} from 'ansi-escapes';
 
 declare class UnsupportedTerminalErrorClass extends Error {
 	readonly name: 'UnsupportedTerminalError';

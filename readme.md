@@ -1,4 +1,4 @@
-# term-img [![Build Status](https://travis-ci.org/sindresorhus/term-img.svg?branch=master)](https://travis-ci.org/sindresorhus/term-img)
+# term-img [![Build Status](https://travis-ci.com/sindresorhus/term-img.svg?branch=master)](https://travis-ci.com/github/sindresorhus/term-img)
 
 > Display images in iTerm
 
@@ -10,13 +10,11 @@ Even [animated gifs](https://github.com/vdemedes/gifi)!
 
 *Currently only supported on [iTerm >=3](https://www.iterm2.com/downloads.html).*
 
-
 ## Install
 
 ```
 $ npm install term-img
 ```
-
 
 ## Usage
 
@@ -30,10 +28,9 @@ function fallback() {
 console.log(termImg('unicorn.jpg', {fallback}));
 ```
 
-
 ## API
 
-### termImg(image, [options])
+### termImg(image, options?)
 
 Get the image as a `string` that you can log manually.
 
@@ -44,6 +41,8 @@ Type: `string | Buffer`
 Filepath to an image or an image as a buffer.
 
 #### options
+
+Type: `object`
 
 ##### width
 ##### height
@@ -59,22 +58,16 @@ The width and height are given as a number followed by a unit, or the word `'aut
 
 ##### preserveAspectRatio
 
-Type: `boolean`<br>
+Type: `boolean`\
 Default: `true`
 
 ##### fallback
 
-Type: `Function`<br>
+Type: `Function`\
 Default: `() => throw new UnsupportedTerminalError()`
 
 Enables you to do something else when the terminal doesn't support images.
 
-
 ## Related
 
 - [term-img-cli](https://github.com/sindresorhus/term-img-cli) - CLI for this module
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

@@ -21,6 +21,8 @@ declare namespace termImg {
 }
 
 declare const termImg: {
+	UnsupportedTerminalError: typeof UnsupportedTerminalErrorClass;
+
 	/**
 	Get the image as a `string` that you can log manually.
 
@@ -41,8 +43,6 @@ declare const termImg: {
 		image: string | Buffer,
 		options?: termImg.Options<FallbackType>
 	): string | FallbackType;
-
-	UnsupportedTerminalError: typeof UnsupportedTerminalErrorClass;
 };
 
 export = termImg;

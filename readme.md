@@ -2,7 +2,7 @@
 
 > Display images in iTerm
 
-You probably want the higher-level [terminal-image](https://github.com/sindresorhus/terminal-image) module for displaying your images.
+You probably want the higher-level [`terminal-image`](https://github.com/sindresorhus/terminal-image) package for displaying your images.
 
 ![](screenshot.jpg)
 

@@ -1,6 +1,6 @@
 {
 	"name": "term-img",
-	"version": "4.1.0",
+	"version": "5.0.0",
 	"description": "Display images in iTerm",
 	"license": "MIT",
 	"repository": "sindresorhus/term-img",

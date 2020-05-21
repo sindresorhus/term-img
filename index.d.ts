@@ -22,7 +22,7 @@ declare namespace termImg {
 
 declare const termImg: {
 	/**
-	Log the image to the terminal directly.
+	Get the image as a `string` that you can log manually.
 
 	@param image - Filepath to an image or an image as a buffer.
 
@@ -37,14 +37,7 @@ declare const termImg: {
 	termImg('unicorn.jpg', {fallback});
 	```
 	*/
-	(image: string | Buffer, options?: termImg.Options): void;
-
-	/**
-	Get the image as a `string` that you can log manually.
-
-	@param image - Filepath to an image or an image as a buffer.
-	*/
-	string<FallbackType>(
+	<FallbackType>(
 		image: string | Buffer,
 		options?: termImg.Options<FallbackType>
 	): string | FallbackType;

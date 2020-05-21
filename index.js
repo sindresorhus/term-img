@@ -14,7 +14,7 @@ function unsupported() {
 	throw new UnsupportedTerminalError();
 }
 
-function main(image, options = {}) {
+module.exports = (image, options = {}) => {
 	const fallback = typeof options.fallback === 'function' ? options.fallback : unsupported;
 
 	if (!(image && image.length > 0)) {
@@ -22,13 +22,13 @@ function main(image, options = {}) {
 	}
 
 	if (process.env.TERM_PROGRAM !== 'iTerm.app') {
-		return fallback;
+		return fallback();
 	}
 
 	const version = iterm2Version();
 
 	if (Number(version[0]) < 3) {
-		return fallback;
+		return fallback();
 	}
 
 	if (typeof image === 'string') {
@@ -36,29 +36,6 @@ function main(image, options = {}) {
 	}
 
 	return ansiEscapes.image(image, options);
-}
-
-const termImg = (image, options) => {
-	const ret = main(image, options);
-
-	if (typeof ret === 'function') {
-		ret();
-		return;
-	}
-
-	console.log(ret);
-};
-
-module.exports = termImg;
-
-module.exports.string = (image, options) => {
-	const ret = main(image, options);
-
-	if (typeof ret === 'function') {
-		return ret();
-	}
-
-	return ret;
 };
 
 module.exports.UnsupportedTerminalError = UnsupportedTerminalError;

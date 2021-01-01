@@ -1,4 +1,4 @@
-# term-img [![Build Status](https://travis-ci.com/sindresorhus/term-img.svg?branch=master)](https://travis-ci.com/github/sindresorhus/term-img)
+# term-img
 
 > Display images in iTerm
 

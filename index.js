@@ -1,9 +1,8 @@
-'use strict';
-const fs = require('fs');
-const iterm2Version = require('iterm2-version');
-const ansiEscapes = require('ansi-escapes');
+import fs from 'node:fs';
+import iterm2Version from 'iterm2-version';
+import ansiEscapes from 'ansi-escapes';
 
-class UnsupportedTerminalError extends Error {
+export class UnsupportedTerminalError extends Error {
 	constructor() {
 		super('iTerm >=3 required');
 		this.name = 'UnsupportedTerminalError';
@@ -14,7 +13,7 @@ function unsupported() {
 	throw new UnsupportedTerminalError();
 }
 
-module.exports = (image, options = {}) => {
+export default function terminalImage(image, options = {}) {
 	const fallback = typeof options.fallback === 'function' ? options.fallback : unsupported;
 
 	if (!(image && image.length > 0)) {
@@ -36,6 +35,4 @@ module.exports = (image, options = {}) => {
 	}
 
 	return ansiEscapes.image(image, options);
-};
-
-module.exports.UnsupportedTerminalError = UnsupportedTerminalError;
+}

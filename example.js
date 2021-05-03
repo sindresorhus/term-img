@@ -1,7 +1,6 @@
-'use strict';
-const termImg = require('.');
+import terminalImage from './index.js';
 
-console.log(termImg('fixture.jpg', {
+console.log(terminalImage('fixture.jpg', {
 	width: 50,
 	fallback: () => 'Not supported here, sorry...'
 }));

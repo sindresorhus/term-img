@@ -19,18 +19,18 @@ $ npm install term-img
 ## Usage
 
 ```js
-const termImg = require('term-img');
+import terminalImage from 'term-img';
 
 function fallback() {
 	// Return something else when not supported
 }
 
-console.log(termImg('unicorn.jpg', {fallback}));
+console.log(terminalImage('unicorn.jpg', {fallback}));
 ```
 
 ## API
 
-### termImg(image, options?)
+### terminalImage(image, options?)
 
 Get the image as a `string` that you can log manually.
 
@@ -38,7 +38,7 @@ Get the image as a `string` that you can log manually.
 
 Type: `string | Buffer`
 
-Filepath to an image or an image as a buffer.
+File path to an image or an image as a buffer.
 
 #### options
 

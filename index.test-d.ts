@@ -1,12 +1,11 @@
 import {expectType} from 'tsd';
-import termImg = require('.');
-import {UnsupportedTerminalError} from '.';
+import terminalImage, {UnsupportedTerminalError} from './index.js';
 
-expectType<string>(termImg('/foo/bar.jpg'));
-expectType<string>(termImg(Buffer.alloc(1)));
-expectType<string>(termImg('/foo/bar.jpg', {width: 1}));
+expectType<string>(terminalImage('/foo/bar.jpg'));
+expectType<string>(terminalImage(Buffer.alloc(1)));
+expectType<string>(terminalImage('/foo/bar.jpg', {width: 1}));
 expectType<string | false>(
-	termImg('/foo/bar.jpg', {fallback: () => false})
+	terminalImage('/foo/bar.jpg', {fallback: () => false})
 );
 
 const unsupportedTerminalError = new UnsupportedTerminalError();

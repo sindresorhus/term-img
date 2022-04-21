@@ -71,3 +71,4 @@ Enables you to do something else when the terminal doesn't support images.
 ## Related
 
 - [term-img-cli](https://github.com/sindresorhus/term-img-cli) - CLI for this module
+- [term-kitty-img](https://github.com/tbjgolden/term-kitty-img) - Similar package but for Kitty, Konsole, WezTerm

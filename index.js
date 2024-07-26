@@ -1,3 +1,4 @@
+import process from 'node:process';
 import fs from 'node:fs';
 import iterm2Version from 'iterm2-version';
 import ansiEscapes from 'ansi-escapes';

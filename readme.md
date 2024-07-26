@@ -12,8 +12,8 @@ Even [animated gifs](https://github.com/vdemedes/gifi)!
 
 ## Install
 
-```
-$ npm install term-img
+```sh
+npm install term-img
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ Get the image as a `string` that you can log manually.
 
 #### image
 
-Type: `string | Buffer`
+Type: `string | Uint8Array`
 
 File path to an image or an image as a buffer.
 

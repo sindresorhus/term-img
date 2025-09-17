@@ -1,6 +1,6 @@
 # term-img
 
-> Display images in iTerm
+> Display images in terminals using the iTerm inline image protocol
 
 You probably want the higher-level [`terminal-image`](https://github.com/sindresorhus/terminal-image) package for displaying your images.
 
@@ -8,7 +8,7 @@ You probably want the higher-level [`terminal-image`](https://github.com/sindres
 
 Even [animated gifs](https://github.com/vdemedes/gifi)!
 
-*Currently only supported on [iTerm >=3](https://www.iterm2.com/downloads.html).*
+*Currently only supported on [iTerm >=3](https://www.iterm2.com/downloads.html), [WezTerm](https://wezfurlong.org/wezterm/), [Konsole](https://konsole.kde.org/), [Rio](https://rioterm.com/), and [VSCode integrated terminal](https://code.visualstudio.com/).*
 
 ## Install
 

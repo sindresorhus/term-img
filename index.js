@@ -37,14 +37,44 @@ function isITerm2IIPSupported() {
 	}
 
 	if (termProgram === 'rio') {
-		return checkRioVersion(termVersion);
+		return checkSemanticVersion(termVersion, '0.1.13');
 	}
 
 	if (termProgram === 'vscode') {
-		return checkVSCodeVersion(termVersion);
+		return checkSemanticVersion(termVersion, '1.80.0');
 	}
 
 	return false;
+}
+
+function checkSemanticVersion(version, minimum) {
+	function parseSemver(v) {
+		if (!v) {
+			return undefined;
+		}
+
+		const [major, minor, patch] = v
+			.split('.')
+			.map(n => Number.parseInt(n, 10));
+		if (major === undefined || Number.isNaN(major)
+			|| minor === undefined || Number.isNaN(minor)
+			|| patch === undefined || Number.isNaN(patch)
+		) {
+			return undefined;
+		}
+
+		return {major, minor, patch};
+	}
+
+	const parsedVersion = parseSemver(version);
+	const parsedMinimum = parseSemver(minimum);
+	if (!parsedVersion || !parsedMinimum) {
+		return false;
+	}
+
+	return parsedVersion.major > parsedMinimum.major
+		|| (parsedVersion.major === parsedMinimum.major && parsedVersion.minor > parsedMinimum.minor)
+		|| (parsedVersion.major === parsedMinimum.major && parsedVersion.minor === parsedMinimum.minor && parsedVersion.patch >= parsedMinimum.patch);
 }
 
 function checkITermVersion() {
@@ -68,40 +98,6 @@ function checkKonsoleVersion(version) {
 
 	const date = Number.parseInt(version, 10);
 	return !Number.isNaN(date) && date >= 220_400;
-}
-
-function checkRioVersion(version) {
-	if (!version) {
-		return false;
-	}
-
-	const [major, minor, patch] = version
-		.split('.')
-		.map(v => Number.parseInt(v, 10));
-
-	if (Number.isNaN(major) || Number.isNaN(minor) || Number.isNaN(patch)) {
-		return false;
-	}
-
-	return major > 0
-		|| (major === 0 && minor > 1)
-		|| (major === 0 && minor === 1 && patch >= 13);
-}
-
-function checkVSCodeVersion(version) {
-	if (!version) {
-		return false;
-	}
-
-	const [major, minor, patch] = version
-		.split('.')
-		.map(v => Number.parseInt(v, 10));
-
-	if (Number.isNaN(major) || Number.isNaN(minor) || Number.isNaN(patch)) {
-		return false;
-	}
-
-	return major > 1 || (major === 1 && minor >= 80);
 }
 
 export default function terminalImage(image, options = {}) {

@@ -1,6 +1,6 @@
 {
 	"name": "term-img",
-	"version": "7.0.0",
+	"version": "7.1.0",
 	"description": "Display images in terminals using the iTerm inline image protocol",
 	"license": "MIT",
 	"repository": "sindresorhus/term-img",

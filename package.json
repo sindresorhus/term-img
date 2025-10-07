@@ -1,7 +1,7 @@
 {
 	"name": "term-img",
 	"version": "7.0.0",
-	"description": "Display images in iTerm",
+	"description": "Display images in terminals using the iTerm inline image protocol",
 	"license": "MIT",
 	"repository": "sindresorhus/term-img",
 	"funding": "https://github.com/sponsors/sindresorhus",
@@ -49,7 +49,7 @@
 		"jpeg"
 	],
 	"dependencies": {
-		"ansi-escapes": "^7.0.0",
+		"ansi-escapes": "^7.1.1",
 		"iterm2-version": "^5.0.0"
 	},
 	"devDependencies": {
